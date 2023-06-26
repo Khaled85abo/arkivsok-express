@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:18.12-buster-slim
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -17,3 +17,6 @@ COPY . .
 
 EXPOSE 8080
 CMD [ "node", "server.js" ]
+
+
+# Error: initializing source docker://registry.redhat.io/node:18: reading manifest 18 in registry.redhat.io/node: unknown: Not Found"
