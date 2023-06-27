@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 // let BASE_URL = "elasticsearch-oss:9200/sharepoint";
 let BASE_URL = "https://swapi.dev/api/";
 axios.BASE_URL = BASE_URL;
-let PORT = process.env.PORT ?? 8080;
+let PORT = process.env.PORT ?? 3030;
 app.get("/api/health", (req, res) => {
   res.status(200).send("Server is running");
 });
