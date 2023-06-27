@@ -3,15 +3,15 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const fetch = require("node-fetch");
-
+const dotenv = require("dotenv");
+dotenv.config();
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // let BASE_URL = "elasticsearch-oss:9200/sharepoint";
 let BASE_URL = "https://swapi.dev/api/";
 axios.BASE_URL = BASE_URL;
-const PORT = 3030;
-
+let PORT = process.env.PORT;
 app.get("/api/health", (req, res) => {
   res.status(200).send("Server is running");
 });
